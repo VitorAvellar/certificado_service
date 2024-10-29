@@ -6,14 +6,37 @@
     <style>
         body { font-family: Arial, sans-serif; text-align: center; }
         h1 { color: #2E86C1; }
-        .certificado { border: 2px solid #2E86C1; padding: 20px; margin: 50px; }
+        .certificado { border: 2px solid #2E86C1; padding: 60px; margin: 50px; }
+
+        .signatures {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .signature {
+            text-align: center;
+        }
+
+        .signature p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
     <div class="certificado">
         <h1>Certificado de Conclusão</h1>
-        <p>Certificamos que <strong>{{ nome }}</strong> concluiu o curso <strong>{{ curso }}</strong>.</p>
+        <p>Certificamos que <strong>{{ nome }}</strong>, <strong>{{ nacionalidade }}</strong>, natural do estado de: <strong>{{ estado }}</strong>, portador(a) do CPF: <strong>{{ cpf }}</strong>, concluiu o curso: <strong>{{ curso }}</strong>.</p>
         <p>Data: {{ data }}</p>
+
+        <div class="signatures">
+            <div class="signature">
+                <p>Assinatura do Professor:</p>
+                <br>
+                <p><strong>PROF Vitor da Silva Avellar</strong></p>
+                <p>------------------------------------------</p>
+            </div>            
+        </div>
     </div>
 </body>
 </html>
