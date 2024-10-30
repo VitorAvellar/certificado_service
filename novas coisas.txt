@@ -1,0 +1,19 @@
+# venv\Scripts\activate
+# python app.py
+
+# Postman
+# http://localhost:5000/emitir_certificado
+# RAW
+
+
+fazer o worker, separar o código que coloca da api e usar o dockercompose para colocar os negocio que baixa
+
+
+# {
+#     "nome": "Vitor da Silva",
+#     "cpf": "123456489",
+#     "nacionalidade": "do brasil",
+#     "estado": "Estadual",
+#     "curso": "testeee",
+#     "data": "2024-10-28"
+# }
