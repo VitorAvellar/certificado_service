@@ -2,3 +2,17 @@ Flask==2.2.3
 Flask-SQLAlchemy==2.5.1
 Flask-CORS==3.0.10
 pdfkit==1.0.1
+# venv\Scripts\activate
+# python app.py
+
+# Postman
+# http://localhost:5000/emitir_certificado
+# RAW
+# {
+#     "nome": "Vitor da Silva",
+#     "cpf": "123456489",
+#     "nacionalidade": "do brasil",
+#     "estado": "Estadual",
+#     "curso": "testeee",
+#     "data": "2024-10-28"
+# }
