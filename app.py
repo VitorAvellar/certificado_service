@@ -9,9 +9,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)  # Habilita CORS para todas as rotas
 
-
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///certificados.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////certificados.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
@@ -65,5 +63,8 @@ def get_certificado(nome):
         return send_file(pdf_path)
     return {'message': 'Certificado não encontrado'}, 404
 
+# if __name__ == '__main__':
+#     app.run(debug=True)
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+

@@ -1,0 +1,17 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./certificados:/app/certificados  # Diretório para salvar certificados PDF
+      - ./certificados.db:/app/certificados.db  # Volume para o arquivo SQLite
+    environment:
+      - FLASK_ENV=development
+      
+  worker:
+    build: .
+    command: python worker.py
+ 
+volumes:
+  pgdata:  # Você também pode remover essa linha se o volume `pgdata` não estiver sendo usado em outro lugar
