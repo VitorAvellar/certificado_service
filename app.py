@@ -54,8 +54,6 @@ def emitir_certificado():
     # Retorne a URL correta para download
     return {'nome': certificado.nome, 'pdf_url': f'/certificado/{certificado.nome}'}
 
-
-
 @app.route('/certificado/<string:nome>', methods=['GET'])
 def get_certificado(nome):
     pdf_path = f'certificados/{nome}.pdf'
