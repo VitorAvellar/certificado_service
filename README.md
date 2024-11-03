@@ -26,3 +26,8 @@ Para Executar o programa digite no terminal:
 - Selecione como RAW e mude para POST
 - Clique em enviar
 - Se aparecer "OK" de tudo certo
+
+- Para executar localmente:
+- Digite python app.py
+- e cliqe no link gerado
+- (obs: para funcionar tem que ter todos os Requirements instalados)
