@@ -14,4 +14,4 @@ services:
     command: python worker.py
  
 volumes:
-  pgdata:  # Você também pode remover essa linha se o volume `pgdata` não estiver sendo usado em outro lugar
+  pgdata: 

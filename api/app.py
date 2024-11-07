@@ -3,8 +3,9 @@ from models import db, Certificado
 from database import init_db
 import pdfkit
 import os
-
+import pika
 from flask_cors import CORS
+import json
 
 app = Flask(__name__)
 CORS(app)  # Habilita CORS para todas as rotas
@@ -13,8 +14,28 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////certificados.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
+RABBITMQ_HOST = 'localhost'
+QUEUE_NAME = 'certificados_queue'
+
 with app.app_context():
     init_db()
+
+
+def send_task_to_queue(data, certificado_id):
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
+    channel = connection.channel()
+
+    channel.queue_declare(queue=QUEUE_NAME)
+
+    message = json.dumps({'data': data, 'certificado_id': certificado_id})
+
+    channel.basic_publish(exchange='',
+                          routing_key=QUEUE_NAME,
+                          body=message)
+
+    # Fechar a conexão
+    connection.close()
+
 
 @app.route('/')
 def index():
@@ -34,7 +55,10 @@ def emitir_certificado():
     db.session.add(certificado)
     db.session.commit()
 
-    # Renderize o template HTML do certificado
+    send_task_to_queue(data, certificado.id)
+
+    return {'nome': certificado.nome, 'status': 'Certificado em processamento'}
+
     html = render_template(
         'certificado.html',
         nome=data['nome'],
@@ -61,8 +85,7 @@ def get_certificado(nome):
         return send_file(pdf_path)
     return {'message': 'Certificado não encontrado'}, 404
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
 

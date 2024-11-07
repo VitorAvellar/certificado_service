@@ -5,6 +5,7 @@ pdfkit
 Werkzeug>=2.0.3,<2.1.0
 SQLAlchemy==1.4.41
 psycopg2-binary>=2.9.3
+pika==1.2.0
 
 # venv\Scripts\activate
 # python app.py
