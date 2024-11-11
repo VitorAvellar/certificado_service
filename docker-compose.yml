@@ -12,6 +12,11 @@ services:
   worker:
     build: .
     command: python worker.py
- 
-volumes:
-  pgdata:  # Você também pode remover essa linha se o volume `pgdata` não estiver sendo usado em outro lugar
+    depends_on:
+      - rabbitmq  # Garante que o RabbitMQ esteja rodando antes do worker
+  
+  rabbitmq:
+    image: "rabbitmq:3-management"  # Versão do RabbitMQ com painel de controle
+    ports:
+      - "5672:5672"  # Porta padrão do RabbitMQ
+      - "15672:15672"  # Porta do painel de administração do RabbitMQ
