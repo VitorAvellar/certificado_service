@@ -8,7 +8,7 @@ import random
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Habilita CORS para todas as rotas
+CORS(app)  
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////certificados.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -37,7 +37,7 @@ def emitir_certificado():
 
     sequencia = ''.join([str(random.randint(0, 9)) for _ in range(10)])
 
-    # Renderiza o template HTML do certificado
+    
     html = render_template(
         'certificado.html',
         nome=data['nome'],
@@ -48,12 +48,12 @@ def emitir_certificado():
         data=data['data']
     )
 
-    pdf_filename = f"{data['nome']}_{sequencia}.pdf"  # Nome do arquivo PDF
+    pdf_filename = f"{data['nome']}_{sequencia}.pdf"  
     pdf_path = f'certificados/{pdf_filename}'
     os.makedirs(os.path.dirname(pdf_path), exist_ok=True)
     pdfkit.from_string(html, pdf_path)
 
-    # Retorne a URL correta para download com o nome completo do arquivo PDF
+    
     return {'nome': certificado.nome, 'pdf_url': f'/certificado/{pdf_filename}'}
 
 @app.route('/certificado/<path:nome>', methods=['GET'])
@@ -63,7 +63,5 @@ def get_certificado(nome):
         return send_file(pdf_path)
     return {'message': 'Certificado não encontrado'}, 404
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
