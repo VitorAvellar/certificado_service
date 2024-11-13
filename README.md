@@ -1,6 +1,6 @@
-Para Executar o programa digite no terminal:
+Para Executar a API siga os passos abaixo:
 
-- INICIE O DOCKER:
+- Digite no terminal:
 - docker-compose up --build
 - Depois que aparecer isso no terminal:
 - ![image](https://github.com/user-attachments/assets/010aaec2-8bd5-417b-a0b5-f204f379d282)
