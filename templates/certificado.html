@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <title>Certificado de Conclusão</title>
     <style>
+            @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0; /* Remove margem padrão */
+            }
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            /* Ocultar cabeçalho e rodapé padrão */
+            body::before, body::after {
+                display: none;
+            }
+        }
+
         body {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center;
         }
@@ -40,6 +55,7 @@
         .signature p {
             margin: 5px 0;
         }
+        
     </style>
 </head>
 <body>
