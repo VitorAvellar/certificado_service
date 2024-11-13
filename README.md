@@ -39,8 +39,8 @@ Para Executar a API siga os passos abaixo:
 - Selecione como RAW e mude para POST
 - Clique em enviar
 - Se aparecer "OK" de tudo certo
-
+<br>
 - Para executar localmente:
-- Digite python app.py
+- Digite: python app.py
 - e cliqe no link gerado
 - (obs: para funcionar tem que ter todos os Requirements instalados)
