@@ -31,6 +31,7 @@ Para Executar a API siga os passos abaixo:
     <br>
 }
 <br>
+<br>
  link do curl:
 <br>
   curl --location 'http://127.0.0.1:5000/emitir_certificado' \
