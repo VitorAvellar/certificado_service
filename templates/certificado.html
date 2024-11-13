@@ -4,9 +4,28 @@
     <meta charset="UTF-8">
     <title>Certificado de Conclusão</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; }
-        h1 { color: #2E86C1; }
-        .certificado { border: 2px solid #2E86C1; padding: 60px; margin: 50px; }
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center;
+        }
+
+        h1 { color: black}
+        .certificado { 
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certificado {
+            content: '';
+            bottom: -10px;
+            background: linear-gradient(45deg, #f39c12, #e74d3c27);
+            border-color: transparent;
+            z-index: -1;
+            border-radius: 12px;
+        }
 
         .signatures {
             margin-top: 50px;
@@ -25,15 +44,15 @@
 </head>
 <body>
     <div class="certificado">
-        <h1>Certificado de Conclusão</h1>
-        <p>Certificamos que <strong>{{ nome }}</strong>, <strong>{{ nacionalidade }}</strong>, natural do estado de: <strong>{{ estado }}</strong>, portador(a) do CPF: <strong>{{ cpf }}</strong>, concluiu o curso: <strong>{{ curso }}</strong>.</p>
-        <p>Data: {{ data }}</p>
-
+        <h1>Universidade de Programação</h1>
+        <h4>Certificado de Conclusão</h4>
+        <p>Certificamos que <strong>{{ nome }}</strong>, natural do Estado de <strong>{{ estado }}</strong>, <strong>{{ nacionalidade }}</strong>, portador(a) do CPF: <strong>{{ cpf }}</strong>, concluiu o curso de <strong>{{ curso }}</strong> na data <strong>{{ data }}</strong></p>
+        <p>Este certificado é concedido em conformidade com o artigo 44, inciso 3353, da Lei 9394/96, e com a Resolução C.N.C./C.C.S. n° 01/07.</p>
         <div class="signatures">
             <div class="signature">
-                <p>Assinatura do Professor:</p>
+                <p>Coordenador geral:</p>
                 <br>
-                <p><strong>PROF Vitor da Silva Avellar</strong></p>
+                <p><strong>Vitor da Silva Avellar</strong></p>
                 <p>------------------------------------------</p>
             </div>            
         </div>
