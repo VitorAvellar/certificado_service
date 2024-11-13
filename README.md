@@ -14,6 +14,7 @@ Para Executar a API siga os passos abaixo:
 - Caso queira mandar pelo postman:
 - No PostMan coloque o link: http://127.0.0.1:5000/emitir_certificado
 - Coloque o seguinte no "BODY":
+<br>
 {
 <br>
   "nome": "PostMan",  
