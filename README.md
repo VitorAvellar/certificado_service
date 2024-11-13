@@ -31,6 +31,11 @@ Para Executar a API siga os passos abaixo:
     <br>
 }
 <br>
+Preencha os campos e depois clique em "Gerar PDF"
+![image](https://github.com/user-attachments/assets/ef1cddb4-5714-402d-bc4e-9f964c87f0bf)
+
+
+<br>
 <br>
  link do curl:
 <br>
