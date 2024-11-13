@@ -15,12 +15,24 @@ Para Executar o programa digite no terminal:
 - No PostMan coloque o link: http://127.0.0.1:5000/emitir_certificado
 - Coloque o seguinte no "BODY":
 {
-  "nome": "PostMan",
+<br>
+  "nome": "PostMan",  
+  </br>
+  <br>
   "cpf": "123.456.789-00",
+  </br>
+  <br>
   "nacionalidade": "Brasileiro",
+  </br>
+  <br>
   "estado": "SP",
+  </br>
+  <br>
   "curso": "Docker Essentials",
+  </br>
+  <br>
   "data": "2024-11-01"
+  </br>
 }
 
 - Selecione como RAW e mude para POST
