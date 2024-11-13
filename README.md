@@ -35,7 +35,19 @@ Para Executar a API siga os passos abaixo:
   "data": "2024-11-01"
   </br>
 }
+<br>
+ link do curl:
 
+  curl --location 'http://127.0.0.1:5000/emitir_certificado' \
+--header 'Content-Type: application/json' \
+--data ' { "nome": "Teste no postMan", 
+    "cpf": "123.456.789-00", 
+    "nacionalidade": "Brasileiro",
+    "estado": "SP",
+    "curso": "Docker Essentials",
+    "data": "2024-11-01"
+ }'
+</br>
 - Selecione como RAW e mude para POST
 - Clique em enviar
 - Se aparecer "OK" de tudo certo
